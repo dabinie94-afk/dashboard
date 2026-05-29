@@ -1890,9 +1890,10 @@ const UI={
       const allItems=[];
       (prevRd[m]||[]).forEach(row=>{
         if(row.nextItems&&row.nextItems.length){
-          row.nextItems.forEach((it,idx)=>{if(it.title)allItems.push({num:idx+1,text:it.title});});
+          row.nextItems.forEach(it=>{if(it.title)allItems.push({num:allItems.length+1,text:it.title});});
         } else if(row.nextContent){
-          extractNumbered(row.nextContent).forEach(it=>allItems.push(it));
+          exextractNumbered(row.nextContent).forEach(it=>allItems.push({num:allItems.length+1,text:it.text}));
+          tractNumbered(row.nextContent).forEach(it=>allItems.push(it));
         }
       });
       if(!allItems.length)return'';
