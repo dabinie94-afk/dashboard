@@ -393,20 +393,23 @@ body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans
 .wr-add-row-btn:hover{color:var(--primary);background:var(--primary-light);}
 
 /* ── 업무 항목 카드 (한 구분 행 안 여러 업무) ── */
-.wr-items-wrap{display:flex;flex-direction:column;gap:5px;padding:4px 4px 2px;}
-.wr-item{border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;background:#fff;}
-.wr-item-title-row{display:flex;align-items:center;gap:4px;padding:3px 5px;background:#f0f4f8;border-bottom:1px solid #e2e8f0;}
-.wr-item-num{font-size:11px;font-weight:700;color:var(--primary);flex-shrink:0;min-width:16px;}
-.wr-item-title{flex:1;border:none;font-size:12px;font-weight:600;color:#040000;background:transparent;padding:2px 3px;font-family:'Noto Sans KR',-apple-system,sans-serif;}
-.wr-item-title:focus{outline:none;background:#fff;border-radius:3px;}
-.wr-item-title::placeholder{color:#cbd5e1;font-weight:400;}
-.wr-item-del{width:16px;height:16px;border:none;background:none;cursor:pointer;color:#e2e8f0;font-size:13px;flex-shrink:0;border-radius:3px;display:flex;align-items:center;justify-content:center;transition:all .15s;padding:0;line-height:1;}
+.wr-items-wrap{display:flex;flex-direction:column;gap:7px;padding:6px 6px 4px;}
+.wr-item{border:1.5px solid #c5d4e8;border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+.wr-item-title-row{display:flex;align-items:center;gap:5px;padding:6px 9px;background:#dce8f8;border-bottom:1.5px solid #c5d4e8;}
+.wr-item-num{font-size:12px;font-weight:700;color:var(--primary);flex-shrink:0;min-width:18px;}
+.wr-item-title-lbl{font-size:10px;font-weight:700;color:#5a7fa8;white-space:nowrap;flex-shrink:0;}
+.wr-item-title{flex:1;border:1px solid #b5c8df;border-radius:4px;font-size:12px;font-weight:600;color:#040000;background:#fff;padding:3px 7px;font-family:'Noto Sans KR',-apple-system,sans-serif;}
+.wr-item-title:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 2px rgba(196,24,31,.1);}
+.wr-item-title::placeholder{color:#94a3b8;font-weight:400;}
+.wr-item-del{width:18px;height:18px;border:none;background:none;cursor:pointer;color:#b5c8df;font-size:14px;flex-shrink:0;border-radius:3px;display:flex;align-items:center;justify-content:center;transition:all .15s;padding:0;line-height:1;}
 .wr-item-del:hover{color:var(--danger);background:var(--danger-light);}
-.wr-item-detail{width:100%;min-height:36px;border:none;resize:none;font-size:12px;line-height:1.7;color:#334155;font-family:'Noto Sans KR',-apple-system,sans-serif;background:transparent;padding:4px 7px;overflow:hidden;display:block;}
+.wr-item-detail-section{background:#fafcff;}
+.wr-item-detail-lbl{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:700;color:#94a3b8;padding:5px 9px 1px;letter-spacing:.3px;}
+.wr-item-detail{width:100%;min-height:44px;border:none;resize:none;font-size:12px;line-height:1.75;color:#334155;font-family:'Noto Sans KR',-apple-system,sans-serif;background:transparent;padding:2px 9px 9px;overflow:hidden;display:block;}
 .wr-item-detail[contenteditable]{overflow:visible;white-space:pre-wrap;word-break:break-word;outline:none;}
 .wr-item-detail[contenteditable]:empty::before{content:attr(data-placeholder);color:#cbd5e1;pointer-events:none;white-space:pre;font-size:12px;}
 .wr-item-detail[contenteditable]:focus{background:rgba(196,24,31,.02);}
-.wr-add-item-btn{display:block;width:100%;padding:4px;border:none;border-top:1px dashed #e2e8f0;background:transparent;font-size:11px;color:#94a3b8;cursor:pointer;font-family:inherit;transition:all .15s;text-align:center;}
+.wr-add-item-btn{display:block;width:100%;padding:6px;border:none;border-top:1.5px dashed #c5d4e8;background:transparent;font-size:11px;color:#94a3b8;cursor:pointer;font-family:inherit;transition:all .15s;text-align:center;}
 .wr-add-item-btn:hover{color:var(--primary);background:var(--primary-light);}
 
 /* Toast */
@@ -482,8 +485,10 @@ body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans
   body{background:#fff!important;}
   .wr-content-area{white-space:pre-wrap!important;overflow:visible!important;height:auto!important;min-height:unset!important;}
   .wr-cat-input,.wr-date-input,.wr-person-sel,.wr-notes-input,.wr-item-title{pointer-events:none;border:none!important;-webkit-appearance:none;appearance:none;}
-  .wr-item-title-row{background:#f0f4f8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .wr-item{border:1px solid #ccc!important;margin-bottom:3pt;}
+  .wr-item-title-row{background:#dce8f8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .wr-item{border:1px solid #aac!important;margin-bottom:3pt;}
+  .wr-item-detail-section{background:#fafcff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .wr-item-title-lbl,.wr-item-detail-lbl{display:none!important;}
   .wr-table{border:1.5px solid #333!important;}
   .wr-th,.wr-td{border:1px solid #999!important;}
   .wr-th-row{background:#eef2ff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -1209,10 +1214,14 @@ const RS={
         return '<div class="wr-item" data-iid="'+it.id+'">'
           +'<div class="wr-item-title-row">'
           +'<span class="wr-item-num">'+(idx+1)+'.</span>'
-          +'<input class="wr-item-title" type="text" value="'+escH(it.title)+'" placeholder="업무 내용" oninput="RS._markDirty()">'
+          +'<span class="wr-item-title-lbl">업무내용</span>'
+          +'<input class="wr-item-title" type="text" value="'+escH(it.title)+'" placeholder="업무 제목을 입력하세요" oninput="RS._markDirty()">'
           +(canDel?'<button class="wr-item-del no-print" onclick="RS.removeItem(\''+pesc+'\',\''+rowId+'\',\''+iesc+'\',\''+sideEsc+'\')" title="삭제">×</button>':'')
           +'</div>'
-          +'<div class="wr-item-detail wr-content-area" contenteditable="true" data-placeholder="세부 내용..." oninput="RS._markDirty()" onfocus="RTB.onFocus(this)">'+richHtml(it.detail)+'</div>'
+          +'<div class="wr-item-detail-section">'
+          +'<div class="wr-item-detail-lbl no-print">세부 내용</div>'
+          +'<div class="wr-item-detail wr-content-area" contenteditable="true" data-placeholder="세부 내용을 입력하세요..." oninput="RS._markDirty()" onfocus="RTB.onFocus(this)">'+richHtml(it.detail)+'</div>'
+          +'</div>'
           +'</div>';
       }).join('');
       return '<div class="wr-'+sideEsc+'-items wr-items-wrap">'
