@@ -516,6 +516,7 @@ body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans
   </div>
   <div class="header-right">
     <span class="week-badge" id="headerWeek"></span>
+    <span class="week-badge" id="headerToday"></span>
     <button class="btn-primary" id="btnAddTask" onclick="UI.showAddModal()">+ 업무추가</button>
   </div>
 </header>
@@ -2115,6 +2116,10 @@ ${planCards?`<div class="dash-block" style="margin-bottom:0">
     ['taskWeekLabel','reportWeekLabel'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=lbl;});
     const{mon,fri}=weekRange(App.week);
     document.getElementById('headerWeek').textContent=shortRange(mon,fri);
+    const now=new Date();
+    const days=['일','월','화','수','목','금','토'];
+    const todayEl=document.getElementById('headerToday');
+    if(todayEl)todayEl.textContent=`📅 ${now.getFullYear()}.${String(now.getMonth()+1).padStart(2,'0')}.${String(now.getDate()).padStart(2,'0')} (${days[now.getDay()]})`;
   },
 
   exportPPT(){
